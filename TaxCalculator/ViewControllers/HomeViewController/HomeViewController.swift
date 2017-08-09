@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class HomeViewController: ValidationViewController, UITextFieldDelegate {
+class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBannerViewDelegate {
 
+    @IBOutlet weak var myBannerView: UIView!
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var grossSalary: UITextField!
@@ -41,11 +44,96 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate {
     
     var activeField: UITextField?
     
+    var bannerView: GADBannerView!
+    
+    lazy var adBannerView: GADBannerView = {
+        let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView.adUnitID = "ca-app-pub-8501671653071605/1974659335"
+        adBannerView.delegate = self
+        adBannerView.rootViewController = self
+        
+        return adBannerView
+    }()
+    
+    
+    //Mark : AdBanner Delegate functions...!
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        print("Banner loaded successfully")
+//        bannerView.frame = self.myBannerView.frame
+        self.myBannerView.addSubview(bannerView)
+        
+        self.myBannerView.frame = bannerView.frame
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
+        
+    }
+    
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        print("Fail to receive ads")
+        print(error)
+    }
+    /// Tells the delegate that a full screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
+        bannerView.removeFromSuperview()
+    }
+    
+    //End mark...!!!
+    
+    //Mark : View LifeCycle.... ******
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        
+        
+        let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID,                       // All simulators
+            "03722c52d89c963a4f8add797ee1aa812bf5ef6d" ];
+        
+//        var adBannerView: GADBannerView?
+        adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+//        adBannerView.adUnitID = "a-app-pub-5758974607162669/4357501237"
+        //This is sample ad unit id
+        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+        
+        adBannerView.delegate = self
+        adBannerView.rootViewController = self
+        
+//        self.adBanner.center =
+//            CGPointMake(self.view.center.x, self.adBanner.center.y);
+        
+        self.adBannerView.center = CGPoint(x: self.view.center.x,  y: adBannerView.center.y)
+        adBannerView.load(GADRequest())
+        
+        
+//        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+//        self.view.addSubview(bannerView)
+////        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.adUnitID = "a-app-pub-5758974607162669/4357501237"
+//        
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
         
         if UIDevice().userInterfaceIdiom == .phone {
             if( UIScreen.main.nativeBounds.height == 480) {
