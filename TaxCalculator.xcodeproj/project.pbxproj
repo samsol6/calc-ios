@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D532DBD9B4F3522FDFB42B6 /* Pods_TaxCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FA3BF124ED94169FB929AE /* Pods_TaxCalculator.framework */; };
+		7F3379E41F39BBC700334923 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3379E31F39BBC700334923 /* QuartzCore.framework */; };
+		7F3379E71F39ED0000334923 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3379E61F39ED0000334923 /* CustomPrintPageRenderer.swift */; };
+		7F3379EA1F39F06D00334923 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3379E81F39F06D00334923 /* Messages.framework */; };
+		7F3379EB1F39F06D00334923 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3379E91F39F06D00334923 /* MessageUI.framework */; };
 		7FA0C6541F3450C200BC769A /* SlabEditorViewController_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA0C6531F3450C200BC769A /* SlabEditorViewController_5.xib */; };
 		7FA0C6571F346E6500BC769A /* ValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA0C6561F346E6500BC769A /* ValidationViewController.swift */; };
 		7FF8A8C61F3340860040116D /* pencil_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A8C51F3340860040116D /* pencil_icon.png */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78FA3BF124ED94169FB929AE /* Pods_TaxCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F3379E31F39BBC700334923 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7F3379E61F39ED0000334923 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPrintPageRenderer.swift; path = ThirdParty/CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		7F3379E81F39F06D00334923 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		7F3379E91F39F06D00334923 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7FA0C6531F3450C200BC769A /* SlabEditorViewController_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlabEditorViewController_5.xib; path = ViewControllers/SlabEditorViewController/SlabEditorViewController_5.xib; sourceTree = "<group>"; };
 		7FA0C6561F346E6500BC769A /* ValidationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationViewController.swift; path = ValidationClass/ValidationViewController.swift; sourceTree = "<group>"; };
 		7FF8A8C51F3340860040116D /* pencil_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pencil_icon.png; path = images/pencil_icon.png; sourceTree = "<group>"; };
@@ -67,6 +77,8 @@
 		7FFC285B1F32FE1900352080 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = ViewControllers/HomeViewController/HomeViewController.xib; sourceTree = "<group>"; };
 		7FFC28601F33153600352080 /* SlabEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlabEditorViewController.swift; path = ViewControllers/SlabEditorViewController/SlabEditorViewController.swift; sourceTree = "<group>"; };
 		7FFC28611F33153600352080 /* SlabEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlabEditorViewController.xib; path = ViewControllers/SlabEditorViewController/SlabEditorViewController.xib; sourceTree = "<group>"; };
+		883CBBE1FE1CE33F14AB9645 /* Pods-TaxCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaxCalculator/Pods-TaxCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		FC2A5528DD8B59A89A6FD784 /* Pods-TaxCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxCalculator/Pods-TaxCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3379EA1F39F06D00334923 /* Messages.framework in Frameworks */,
+				7F3379EB1F39F06D00334923 /* MessageUI.framework in Frameworks */,
+				7F3379E41F39BBC700334923 /* QuartzCore.framework in Frameworks */,
+				4D532DBD9B4F3522FDFB42B6 /* Pods_TaxCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F3379E51F39ECE600334923 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				7F3379E61F39ED0000334923 /* CustomPrintPageRenderer.swift */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
 		7FA0C6551F346E3A00BC769A /* ValidationClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +151,8 @@
 				7FFC283F1F32FC2D00352080 /* TaxCalculatorTests */,
 				7FFC284A1F32FC2D00352080 /* TaxCalculatorUITests */,
 				7FFC28261F32FC2B00352080 /* Products */,
+				AF22D879684EA126E6F60304 /* Pods */,
+				D66A2A41253C8CB7876926E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +169,7 @@
 		7FFC28271F32FC2B00352080 /* TaxCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				7F3379E51F39ECE600334923 /* ThirdParty */,
 				7FA0C6551F346E3A00BC769A /* ValidationClass */,
 				7FF8A8C41F33406D0040116D /* images */,
 				7FFC28591F32FDF400352080 /* ViewControllers */,
@@ -203,6 +230,26 @@
 			name = SlabEditorController;
 			sourceTree = "<group>";
 		};
+		AF22D879684EA126E6F60304 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				883CBBE1FE1CE33F14AB9645 /* Pods-TaxCalculator.debug.xcconfig */,
+				FC2A5528DD8B59A89A6FD784 /* Pods-TaxCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D66A2A41253C8CB7876926E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F3379E81F39F06D00334923 /* Messages.framework */,
+				7F3379E91F39F06D00334923 /* MessageUI.framework */,
+				7F3379E31F39BBC700334923 /* QuartzCore.framework */,
+				78FA3BF124ED94169FB929AE /* Pods_TaxCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FFC28501F32FC2D00352080 /* Build configuration list for PBXNativeTarget "TaxCalculator" */;
 			buildPhases = (
+				8A5EBCED42391B27DED22B80 /* [CP] Check Pods Manifest.lock */,
 				7FFC28211F32FC2B00352080 /* Sources */,
 				7FFC28221F32FC2B00352080 /* Frameworks */,
 				7FFC28231F32FC2B00352080 /* Resources */,
+				EF8E2836D7800357AFA12936 /* [CP] Embed Pods Frameworks */,
+				E895602A0C93C49401A33E3F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,6 +390,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8A5EBCED42391B27DED22B80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E895602A0C93C49401A33E3F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaxCalculator/Pods-TaxCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8E2836D7800357AFA12936 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaxCalculator/Pods-TaxCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FFC28211F32FC2B00352080 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -349,6 +447,7 @@
 				7FFC282B1F32FC2C00352080 /* ViewController.swift in Sources */,
 				7FFC28291F32FC2C00352080 /* AppDelegate.swift in Sources */,
 				7FA0C6571F346E6500BC769A /* ValidationViewController.swift in Sources */,
+				7F3379E71F39ED0000334923 /* CustomPrintPageRenderer.swift in Sources */,
 				7FFC28621F33153600352080 /* SlabEditorViewController.swift in Sources */,
 				7FFC28311F32FC2C00352080 /* TaxCalculator.xcdatamodeld in Sources */,
 				7FFC285C1F32FE1900352080 /* HomeViewController.swift in Sources */,
@@ -493,6 +592,7 @@
 		};
 		7FFC28511F32FC2D00352080 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883CBBE1FE1CE33F14AB9645 /* Pods-TaxCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tyler Brown (279RKCVBF6)";
@@ -510,6 +610,7 @@
 		};
 		7FFC28521F32FC2D00352080 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC2A5528DD8B59A89A6FD784 /* Pods-TaxCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tyler Brown (279RKCVBF6)";

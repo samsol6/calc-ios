@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
 
+        
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-5758974607162669~9379739538")
         return true
     }
 
