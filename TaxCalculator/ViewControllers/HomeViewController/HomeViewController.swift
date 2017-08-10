@@ -9,7 +9,10 @@
 import UIKit
 import GoogleMobileAds
 
-class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBannerViewDelegate {
+class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBannerViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var fromYear: UIPickerView!
+    @IBOutlet weak var toYear: UIPickerView!
 
     @IBOutlet weak var myBannerView: UIView!
     @IBOutlet weak var topView: UIView!
@@ -99,13 +102,36 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
     
     //End mark...!!!
     
+    var fromYearArray = NSMutableArray()
+    var toYearArray   = NSMutableArray()
+    
+    var fromYearSelected = String()
+    var toYearSelected   = String()
+    
     //Mark : View LifeCycle.... ******
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        //year selection arrays
         
+         self.fromYearArray = ["1990", "1991", "1992", "1993", "1994", "1995", "1996","1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050"]
+        self.toYearArray = ["1990", "1991", "1992", "1993", "1994", "1995", "1996","1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050"]
+        
+        fromYear.delegate = self
+        toYear.delegate   = self
+        
+        fromYear.dataSource = self
+        toYear.dataSource   = self
+        
+        
+        self.fromYear.selectRow(26, inComponent: 0, animated: false)
+        self.toYear.selectRow(27, inComponent: 0, animated: false)
+        
+        self.fromYearSelected = "2016"
+        self.toYearSelected = "2017"
+        //end
         
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID,                       // All simulators
@@ -432,15 +458,26 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
                     UserDefaults.standard.set(Double(strTaxAlreadyDeductedIncome), forKey: "taxAlreadyDeductedIncome")
                     UserDefaults.standard.set(totalTax, forKey: "OriginalTax")
                     UserDefaults.standard.set(totalAmount, forKey: "TotalAmountForTax")
-                    UserDefaults.standard.synchronize()
+                    
                     var msgStr = "Your Total Tax calculated is " + "\(totalTax)"
-//                    let alert = UIAlertController(title: "Tax", message: msgStr, preferredStyle: UIAlertControllerStyle.alert)
-//                    
-//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//                    
-//                    self.present(alert, animated: true, completion: nil)
                     
                     
+                    //This is my code for saving info to show up on the pdf screen
+                    UserDefaults.standard.set(String(strGrossSalary), forKey: "grossSalary")
+                    UserDefaults.standard.set(String(strHouseRentAllowance), forKey: "houseRentAllowance")
+                    UserDefaults.standard.set(String(strCostofFreeUnits), forKey: "costOfFreeUnits")
+                    UserDefaults.standard.set(String(strCostOfUnconsumedUnits), forKey: "costOfUnconsumedUnits")
+                    UserDefaults.standard.set(String(strOtherIncome), forKey: "otherIncome")
+                    UserDefaults.standard.set(String(strDonationDeducted), forKey: "donationDeducted")
+                    UserDefaults.standard.set(String(strZakatDeducted), forKey: "zakatDeducted")
+                    
+                    
+                    //now saving year strings
+                    
+                    UserDefaults.standard.set(fromYearSelected, forKey: "fromYearSelected")
+                    UserDefaults.standard.set(toYearSelected, forKey: "toYearSelected")
+                    UserDefaults.standard.synchronize()
+                    //end
                     let vc = ResultScreenViewController(
                         nibName: "ResultScreenViewController",
                         bundle: nil)
@@ -624,45 +661,43 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
         //end...
     }
     
+    //MARK:UIPickerViewControllerDelegate ****************************************
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        
+        return 1;
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        if (pickerView == fromYear){
+            return self.fromYearArray.count
+        }
+        else{
+            return self.toYearArray.count
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if (pickerView == fromYear){
+            return ((self.fromYearArray.object(at: row) as AnyObject)) as? String
+        }
+        else{
+            return ((self.toYearArray.object(at: row) as AnyObject)) as? String
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        if(pickerView == fromYear){
+            fromYearSelected = (((self.fromYearArray.object(at: row) as AnyObject)) as? String)!
+        }
+        else{
+            toYearSelected = (((self.toYearArray.object(at: row) as AnyObject)) as? String)!
+        }
+    }
+
+    
     @IBAction func goToSlab(_ sender: UIButton) {
         let vc = SlabEditorViewController(
             nibName: "SlabEditorViewController",
             bundle: nil)
         self.present(vc, animated: true, completion: nil)
-        
-//        if UIDevice().userInterfaceIdiom == .phone {
-//            
-//            if(UIScreen.main.nativeBounds.height == 480){
-//                
-//            }
-//            else if(UIScreen.main.nativeBounds.height == 960){
-//                print("iPhone 4 or 4S")
-//                let vc = SlabEditorViewController(
-//                    nibName: "SlabEditorViewController_5",
-//                    bundle: nil)
-//                self.present(vc, animated: true, completion: nil)
-//                
-//
-//            }
-//            else if(UIScreen.main.nativeBounds.height == 1136){
-//                print("iPhone 5 or 5S or 5C")
-//                let vc = SlabEditorViewController(
-//                    nibName: "SlabEditorViewController_5",
-//                    bundle: nil)
-//                self.present(vc, animated: true, completion: nil)
-//                
-//
-//            }
-//            else{
-//                print("above iphone 6 and +")
-//                let vc = SlabEditorViewController(
-//                    nibName: "SlabEditorViewController",
-//                    bundle: nil)
-//                self.present(vc, animated: true, completion: nil)
-//                
-//
-//            }
-//        }
     }
 
     /*
