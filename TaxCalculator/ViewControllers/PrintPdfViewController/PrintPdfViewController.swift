@@ -195,7 +195,8 @@ class PrintPdfViewController: UIViewController,  MFMailComposeViewControllerDele
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mailComposeViewController = MFMailComposeViewController()
-            mailComposeViewController.setSubject("Tax Results")
+            mailComposeViewController.setSubject("")
+            mailComposeViewController.setToRecipients(["ahmadrafiqbscs@gmail.com"])
             mailComposeViewController.mailComposeDelegate = self
             mailComposeViewController.addAttachmentData(NSData(contentsOfFile: self.pdfFilename)! as Data, mimeType: "application/pdf", fileName: "TaxFile")
             present(mailComposeViewController, animated: true, completion: nil)
@@ -206,6 +207,19 @@ class PrintPdfViewController: UIViewController,  MFMailComposeViewControllerDele
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         print("finsih method")
+        
+        print(result)
+        switch result {
+        case .cancelled:
+            print("cancelled")
+        case .failed:
+            print("failed")
+        case .sent:
+            print("sent")
+        default:
+            print("default")
+        }
+        
         controller.dismiss(animated: true)
     }
 
