@@ -30,6 +30,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    //Mark : Custom methods.... ***************************************
+    
+    
+    // MARK: Custom Methods
+    
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    
+//    func getStringValueFormattedAsCurrency(value: String) -> String {
+//        let numberFormatter = NumberFormatter()
+//        numberFormatter.numberStyle = NumberFormatter.Style.currency
+//        numberFormatter.currencyCode = currencyCode
+//        numberFormatter.maximumFractionDigits = 2
+//        
+//        let formattedValue = numberFormatter.string(from: NumberFormatter().number(from: value)!)
+//        return formattedValue!
+//    }
+    
+    
+    func getDocDir() -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    }
+
+    
+    //end *************************************************************
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

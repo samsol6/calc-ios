@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrintPdfViewController" customModule="TaxCalculator" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webPreview" destination="ML0-pn-4ga" id="diE-VO-yw9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ML0-pn-4ga">
+                    <rect key="frame" x="0.0" y="76" width="375" height="541"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMs-6b-o3R">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.30588235289999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="n9q-bT-HyF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Send Email">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendPdfAsEmail:" destination="-1" eventType="touchUpInside" id="6sY-Cs-j6k"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rya-Ar-DIm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPo-8r-y35">
+                            <rect key="frame" x="72" y="25" width="232" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="pw0-IX-rPE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCu-Mf-syJ">
+                            <rect key="frame" x="8" y="29" width="56" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="56" id="RyW-HV-ghL"/>
+                                <constraint firstAttribute="height" constant="30" id="VG8-3Z-WSm"/>
+                            </constraints>
+                            <state key="normal" title="Back">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goBack:" destination="-1" eventType="touchUpInside" id="VQv-ye-TOe"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.30588235289999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="kCu-Mf-syJ" firstAttribute="leading" secondItem="rya-Ar-DIm" secondAttribute="leading" constant="8" id="N2L-j3-kU2"/>
+                        <constraint firstItem="tPo-8r-y35" firstAttribute="top" secondItem="rya-Ar-DIm" secondAttribute="top" constant="25" id="Qkd-si-peD"/>
+                        <constraint firstItem="tPo-8r-y35" firstAttribute="centerX" secondItem="rya-Ar-DIm" secondAttribute="centerX" id="cwj-Fp-NOA"/>
+                        <constraint firstAttribute="trailing" secondItem="tPo-8r-y35" secondAttribute="trailing" constant="71" id="ens-zX-TgB"/>
+                        <constraint firstItem="kCu-Mf-syJ" firstAttribute="top" secondItem="rya-Ar-DIm" secondAttribute="top" constant="29" id="f3u-pG-dF1"/>
+                        <constraint firstAttribute="height" constant="74" id="qVX-F5-kLi"/>
+                        <constraint firstItem="tPo-8r-y35" firstAttribute="leading" secondItem="kCu-Mf-syJ" secondAttribute="trailing" constant="8" id="tIQ-jt-K9m"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ML0-pn-4ga" secondAttribute="trailing" id="0l8-fp-w3P"/>
+                <constraint firstAttribute="trailing" secondItem="fMs-6b-o3R" secondAttribute="trailing" id="4H0-Dl-Zm2"/>
+                <constraint firstItem="rya-Ar-DIm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bri-vM-E0n"/>
+                <constraint firstItem="ML0-pn-4ga" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GCA-CS-mgh"/>
+                <constraint firstAttribute="bottom" secondItem="fMs-6b-o3R" secondAttribute="bottom" id="HYb-uR-xXU"/>
+                <constraint firstItem="rya-Ar-DIm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wna-YV-o8U"/>
+                <constraint firstAttribute="bottom" secondItem="ML0-pn-4ga" secondAttribute="bottom" constant="50" id="cqk-16-Z72"/>
+                <constraint firstAttribute="trailing" secondItem="rya-Ar-DIm" secondAttribute="trailing" id="eKT-92-ZrO"/>
+                <constraint firstItem="ML0-pn-4ga" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="qBv-J3-feW"/>
+                <constraint firstItem="fMs-6b-o3R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vYF-SM-dn0"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="66.5"/>
+        </view>
+    </objects>
+</document>
