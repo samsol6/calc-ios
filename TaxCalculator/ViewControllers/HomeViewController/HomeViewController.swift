@@ -430,7 +430,11 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
                 var totalAmount = userTotalIncome - deductionCalculatedIncome
                 
                 
-                if(totalAmount >= lowerLimit && totalAmount <= upperLimit){
+                
+                
+                
+                
+                if(totalAmount > lowerLimit && totalAmount <= upperLimit){
                     //it means that our required slab is found
                     
                     
@@ -484,13 +488,79 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
                     self.present(vc, animated: true, completion: nil)
                     
                 }
+                    
+                //now checking that if the limit exists for the last range
                 
-                
+                if(count == slabsInfoArray.count-1){
+                    var dict : NSMutableDictionary = slabsInfoArray.object(at: count) as! NSMutableDictionary
+                    
+                    var lowerLimit : Int = dict.value(forKey: "lowerLimit") as! Int
+                    var upperLimit : Int = dict.value(forKey: "upperLimit") as! Int
+                    var incomeTax : Int = dict.value(forKey: "incomeTax") as! Int
+                    var percentage : Double = dict.value(forKey: "percentage") as! Double
+                    
+                    var userTotalIncome : Int = Int(strGrossSalary) + Int(strHouseRentAllowance) + Int(strCostofFreeUnits) - Int(strCostOfUnconsumedUnits) + Int(strOtherIncome)
+                    var deductionCalculatedIncome : Int = Int(strDonationDeducted) + Int(strZakatDeducted)
+                    //This is the total amount on which we have to calculate the tax
+                    var totalAmount = userTotalIncome - deductionCalculatedIncome
+                    
+                    if(totalAmount > lowerLimit){
+                        //it means that our required slab is found
+                        
+                        
+                        var doubleTotalAmountVariable = Double(totalAmount)
+                        var taxCalculatedOnTotalIncome = (percentage/100.0) * doubleTotalAmountVariable
+                        
+                        //This is the tax which user have to pay, means total tax + fixed tax
+                        var totalTaxCalculatedOnIncome : Double = taxCalculatedOnTotalIncome + Double(incomeTax)
+                        
+                        //This is the tax which the user already paid...
+                        var deductionTaxCalculated : Int = Int(strRebateTaxAlreadyPaid) + Int(strTaxAlreadyDeductedInSalary) + Int(strTaxAlreadyDeductedIncome)
+                        
+                        //so now, subtracting deductionTaxCalculated from totalTaxCalculatedonIncome
+                        
+                        var totalTax = totalTaxCalculatedOnIncome - Double(deductionTaxCalculated)
+                        
+                        print(totalTax)
+                        
+                        UserDefaults.standard.set(lowerLimit, forKey: "lowerLimitShow")
+                        UserDefaults.standard.set(incomeTax, forKey: "incomeTaxShow")
+                        UserDefaults.standard.set(percentage, forKey: "percentageShow")
+                        UserDefaults.standard.set(taxCalculatedOnTotalIncome, forKey: "taxIncome")
+                        UserDefaults.standard.set(Double(strRebateTaxAlreadyPaid), forKey: "rebateTaxalreadyPaid")
+                        UserDefaults.standard.set(Double(strTaxAlreadyDeductedInSalary), forKey: "taxAlreadyDeductedInSalary")
+                        UserDefaults.standard.set(Double(strTaxAlreadyDeductedIncome), forKey: "taxAlreadyDeductedIncome")
+                        UserDefaults.standard.set(totalTax, forKey: "OriginalTax")
+                        UserDefaults.standard.set(totalAmount, forKey: "TotalAmountForTax")
+                        
+                        var msgStr = "Your Total Tax calculated is " + "\(totalTax)"
+                        
+                        
+                        //This is my code for saving info to show up on the pdf screen
+                        UserDefaults.standard.set(String(strGrossSalary), forKey: "grossSalary")
+                        UserDefaults.standard.set(String(strHouseRentAllowance), forKey: "houseRentAllowance")
+                        UserDefaults.standard.set(String(strCostofFreeUnits), forKey: "costOfFreeUnits")
+                        UserDefaults.standard.set(String(strCostOfUnconsumedUnits), forKey: "costOfUnconsumedUnits")
+                        UserDefaults.standard.set(String(strOtherIncome), forKey: "otherIncome")
+                        UserDefaults.standard.set(String(strDonationDeducted), forKey: "donationDeducted")
+                        UserDefaults.standard.set(String(strZakatDeducted), forKey: "zakatDeducted")
+                        
+                        //now saving year strings
+                        
+                        UserDefaults.standard.set(fromYearSelected, forKey: "fromYearSelected")
+                        UserDefaults.standard.set(toYearSelected, forKey: "toYearSelected")
+                        UserDefaults.standard.synchronize()
+                        //end
+                        let vc = ResultScreenViewController(
+                            nibName: "ResultScreenViewController",
+                            bundle: nil)
+                        self.present(vc, animated: true, completion: nil)
+
+                    }
+                }
                 
                 count += 1
             }
-            
-            
         }
         
         

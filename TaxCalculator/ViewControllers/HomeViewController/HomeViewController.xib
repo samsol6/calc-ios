@@ -91,7 +91,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-FT-LU6">
-                    <rect key="frame" x="0.0" y="187" width="375" height="673"/>
+                    <rect key="frame" x="0.0" y="172" width="375" height="689"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gross Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ1-Bs-vPi">
                             <rect key="frame" x="18" y="27" width="216" height="33"/>
@@ -234,7 +234,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*      For House Aquisition only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5e-a4-klP">
-                            <rect key="frame" x="21" y="561" width="333" height="21"/>
+                            <rect key="frame" x="21" y="546" width="333" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="u5e-tW-1n8"/>
                             </constraints>
@@ -243,7 +243,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**    For WAPDA Employees only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbA-hW-U9f">
-                            <rect key="frame" x="21" y="594" width="333" height="21"/>
+                            <rect key="frame" x="21" y="579" width="333" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="SXp-oe-lFM"/>
                             </constraints>
@@ -252,7 +252,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="***  Bonus Honorarium, Reward etc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2r-LK-RVZ">
-                            <rect key="frame" x="21" y="625" width="333" height="21"/>
+                            <rect key="frame" x="21" y="610" width="333" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="TX3-3i-TXB"/>
                             </constraints>
@@ -391,14 +391,14 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3O-Oo-EOu">
-                            <rect key="frame" x="0.0" y="654" width="375" height="50"/>
+                            <rect key="frame" x="0.0" y="636" width="375" height="50"/>
                             <color key="backgroundColor" red="0.2470588235" green="0.80392156859999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="lch-Ej-X61" firstAttribute="top" secondItem="MYC-eY-5Ei" secondAttribute="bottom" constant="1" id="0vz-Af-wyh"/>
                         <constraint firstAttribute="trailing" secondItem="KbA-hW-U9f" secondAttribute="trailing" constant="21" id="2IP-DN-oye"/>
-                        <constraint firstItem="e5e-a4-klP" firstAttribute="top" secondItem="ViU-0x-dpC" secondAttribute="bottom" constant="210" id="2qU-aF-I4T"/>
+                        <constraint firstItem="e5e-a4-klP" firstAttribute="top" secondItem="ViU-0x-dpC" secondAttribute="bottom" constant="195" id="2qU-aF-I4T"/>
                         <constraint firstAttribute="trailing" secondItem="214-76-2hx" secondAttribute="trailing" constant="17" id="31C-uN-A2u"/>
                         <constraint firstItem="d2r-LK-RVZ" firstAttribute="leading" secondItem="LDn-FT-LU6" secondAttribute="leading" constant="21" id="33R-Te-2jX"/>
                         <constraint firstItem="V7D-Hg-DOx" firstAttribute="top" secondItem="FWS-v9-J5y" secondAttribute="bottom" constant="1" id="3wp-2C-7ts"/>
@@ -406,7 +406,7 @@
                         <constraint firstItem="WvD-6Z-u9B" firstAttribute="top" secondItem="n8z-7y-GSr" secondAttribute="bottom" constant="1" id="4tg-ae-l3O"/>
                         <constraint firstItem="214-76-2hx" firstAttribute="top" secondItem="vOW-9q-VBt" secondAttribute="bottom" constant="16" id="5sP-Gz-z0X"/>
                         <constraint firstAttribute="trailing" secondItem="vOW-9q-VBt" secondAttribute="trailing" constant="21" id="5xu-vd-dGV"/>
-                        <constraint firstItem="i3O-Oo-EOu" firstAttribute="top" secondItem="d2r-LK-RVZ" secondAttribute="bottom" constant="8" id="6uh-0h-tY6"/>
+                        <constraint firstItem="i3O-Oo-EOu" firstAttribute="top" secondItem="d2r-LK-RVZ" secondAttribute="bottom" constant="5" id="6uh-0h-tY6"/>
                         <constraint firstAttribute="trailing" secondItem="d2r-LK-RVZ" secondAttribute="trailing" constant="21" id="82C-0P-tVl"/>
                         <constraint firstItem="ck6-i0-UbW" firstAttribute="top" secondItem="WvD-6Z-u9B" secondAttribute="bottom" constant="13" id="8Ty-UC-El1"/>
                         <constraint firstAttribute="trailing" secondItem="uZE-4b-PmX" secondAttribute="trailing" constant="17" id="9Hk-Er-J71"/>
@@ -430,7 +430,7 @@
                         <constraint firstAttribute="trailing" secondItem="eh1-gV-pkL" secondAttribute="trailing" constant="17" id="NGO-HG-JaY"/>
                         <constraint firstAttribute="trailing" secondItem="GTz-St-hNm" secondAttribute="trailing" constant="17" id="NWW-Fh-HQi"/>
                         <constraint firstItem="t12-gY-irs" firstAttribute="leading" secondItem="LDn-FT-LU6" secondAttribute="leading" constant="21" id="NfI-Rp-Gk8"/>
-                        <constraint firstAttribute="bottom" secondItem="d2r-LK-RVZ" secondAttribute="bottom" constant="27" id="OgZ-02-BxF"/>
+                        <constraint firstAttribute="bottom" secondItem="d2r-LK-RVZ" secondAttribute="bottom" constant="58" id="OgZ-02-BxF"/>
                         <constraint firstAttribute="trailing" secondItem="e5e-a4-klP" secondAttribute="trailing" constant="21" id="PKh-3m-esf"/>
                         <constraint firstAttribute="trailing" secondItem="ck6-i0-UbW" secondAttribute="trailing" constant="17" id="QW1-U6-Ty4"/>
                         <constraint firstAttribute="trailing" secondItem="Lc4-cT-F9Z" secondAttribute="trailing" constant="17" id="Qqk-zj-iNG"/>
@@ -466,7 +466,7 @@
                         <constraint firstItem="bKa-5K-Vv9" firstAttribute="top" secondItem="USc-Sm-H58" secondAttribute="bottom" constant="12" id="gZC-qW-RTO"/>
                         <constraint firstItem="n8z-7y-GSr" firstAttribute="top" secondItem="oUT-fd-c7i" secondAttribute="bottom" constant="12" id="idE-Wd-w53"/>
                         <constraint firstAttribute="trailing" secondItem="i3O-Oo-EOu" secondAttribute="trailing" id="k8P-CU-orc"/>
-                        <constraint firstAttribute="bottom" secondItem="i3O-Oo-EOu" secondAttribute="bottom" constant="-31" id="kmm-Vy-R96"/>
+                        <constraint firstAttribute="bottom" secondItem="i3O-Oo-EOu" secondAttribute="bottom" constant="3" id="kmm-Vy-R96"/>
                         <constraint firstAttribute="trailing" secondItem="CSR-IZ-Y0c" secondAttribute="trailing" constant="21" id="lOq-SJ-p2a"/>
                         <constraint firstItem="d2r-LK-RVZ" firstAttribute="top" secondItem="KbA-hW-U9f" secondAttribute="bottom" constant="10" id="lkC-fO-KHA"/>
                         <constraint firstItem="Lc4-cT-F9Z" firstAttribute="top" secondItem="BwA-IH-CgN" secondAttribute="bottom" constant="14" id="ls8-QB-SjO"/>
@@ -540,11 +540,11 @@
                 <constraint firstItem="pId-cE-Dyq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="GbM-pR-7hj"/>
                 <constraint firstAttribute="trailing" secondItem="sXq-at-yN9" secondAttribute="trailing" id="HbD-DN-Ik4"/>
                 <constraint firstAttribute="trailing" secondItem="LDn-FT-LU6" secondAttribute="trailing" id="I7U-Cr-zPs"/>
-                <constraint firstItem="LDn-FT-LU6" firstAttribute="top" secondItem="Yxq-DG-6gm" secondAttribute="bottom" constant="113" id="NIF-U1-4uO"/>
+                <constraint firstItem="LDn-FT-LU6" firstAttribute="top" secondItem="Yxq-DG-6gm" secondAttribute="bottom" constant="98" id="NIF-U1-4uO"/>
                 <constraint firstAttribute="trailing" secondItem="Yxq-DG-6gm" secondAttribute="trailing" id="NPq-cq-kzo"/>
                 <constraint firstItem="pId-cE-Dyq" firstAttribute="top" secondItem="Yxq-DG-6gm" secondAttribute="bottom" constant="49" id="Sbv-TW-ffL"/>
                 <constraint firstItem="AUt-qE-kmU" firstAttribute="top" secondItem="Yxq-DG-6gm" secondAttribute="bottom" constant="8" id="TpK-mm-KQk"/>
-                <constraint firstAttribute="bottom" secondItem="LDn-FT-LU6" secondAttribute="bottom" constant="50" id="TtH-R2-cMx"/>
+                <constraint firstAttribute="bottom" secondItem="LDn-FT-LU6" secondAttribute="bottom" constant="49" id="TtH-R2-cMx"/>
                 <constraint firstAttribute="bottom" secondItem="sXq-at-yN9" secondAttribute="bottom" id="XIV-wa-Uj9"/>
                 <constraint firstItem="Yxq-DG-6gm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XbQ-CS-t58"/>
                 <constraint firstItem="LDn-FT-LU6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d6e-SX-S0X"/>
