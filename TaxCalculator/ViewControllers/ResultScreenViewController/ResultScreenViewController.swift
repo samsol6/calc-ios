@@ -69,6 +69,9 @@ class ResultScreenViewController: UIViewController, MFMailComposeViewControllerD
             var ans3 = Int(ans2)
             self.taxOnAccessAmount.text = String(ans3)
             second = ans2
+            
+            UserDefaults.standard.set(ans3, forKey: "taxOnAccessAmount")
+            UserDefaults.standard.synchronize()
         }
 //        if let incomeTax : Double = UserDefaults.standard.value(forKey: "lowerLimitShow") as! Double{
 //            self.taxOnAccessAmount.text = String(incomeTax)
@@ -76,27 +79,40 @@ class ResultScreenViewController: UIViewController, MFMailComposeViewControllerD
         
         var t = Int(first + second)
         self.totalTaxCalculated.text = String(t)
+        UserDefaults.standard.set(t, forKey: "totalTaxCalculated")
+        UserDefaults.standard.synchronize()
         
         var third = Double()
         if let rebateTax : Double = UserDefaults.standard.value(forKey: "rebateTaxalreadyPaid") as! Double{
             var t = Int(rebateTax)
             self.witholdingTax.text = String(t)
             third = rebateTax
+            
+            UserDefaults.standard.set(t, forKey: "witholdingTax")
+            UserDefaults.standard.synchronize()
         }
         
         var t2 = Int((first+second)-third)
         self.netTaxPayable.text = String(t2)
         netPayAbleText = (first+second)-third
+        UserDefaults.standard.set(t2, forKey: "netTaxPayable")
+        UserDefaults.standard.synchronize()
         
         if let taxThroughSalary : Double = UserDefaults.standard.value(forKey: "taxAlreadyDeductedInSalary") as! Double{
             var t = Int(taxThroughSalary)
             self.taxAlreadyDeductedSalary.text = String(t)
             deductedSalary = taxThroughSalary
+            
+            UserDefaults.standard.set(t, forKey: "taxAlreadyDeductedSalary")
+            UserDefaults.standard.synchronize()
         }
         if let taxThroughIncome : Double = UserDefaults.standard.value(forKey: "taxAlreadyDeductedIncome") as! Double{
             var t = Int(taxThroughIncome)
             self.taxAlreadyDeductedIncome.text = String(t)
             deductedIncome = taxThroughIncome
+            
+            UserDefaults.standard.set(t, forKey: "taxAlreadyIncome")
+            UserDefaults.standard.synchronize()
         }
         
         var balanceAnswer = netPayAbleText - deductedSalary - deductedIncome
@@ -104,10 +120,20 @@ class ResultScreenViewController: UIViewController, MFMailComposeViewControllerD
         if(balanceAnswer < 0){
             var t = Int(abs(balanceAnswer))
             self.balance.text = "( " + "\(t)" + " )"
+            
+            var str : String = "( " + "\(t)" + " )"
+
+            UserDefaults.standard.set(str, forKey: "totalBalance")
+            UserDefaults.standard.synchronize()
         }
         else{
             var t = Int(balanceAnswer)
             self.balance.text = String(t)
+            
+            var str : String = String(t)
+            
+            UserDefaults.standard.set(str, forKey: "totalBalance")
+            UserDefaults.standard.synchronize()
         }
     }
 
@@ -201,6 +227,13 @@ class ResultScreenViewController: UIViewController, MFMailComposeViewControllerD
         controller.dismiss(animated: true)
     }
     
+    @IBAction func goToPdfScreen(_ sender: UIButton) {
+        
+        let vc = PrintPdfViewController(
+            nibName: "PrintPdfViewController",
+            bundle: nil)
+        self.present(vc, animated: true, completion: nil)
+    }
 //    func mimeTypefrom(filePath: String) -> String {
 //        
 //        let fileExtension = filePath.pathExtension;

@@ -14,6 +14,12 @@
 		7F3379EB1F39F06D00334923 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3379E91F39F06D00334923 /* MessageUI.framework */; };
 		7FA0C6541F3450C200BC769A /* SlabEditorViewController_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA0C6531F3450C200BC769A /* SlabEditorViewController_5.xib */; };
 		7FA0C6571F346E6500BC769A /* ValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA0C6561F346E6500BC769A /* ValidationViewController.swift */; };
+		7FBB4CA81F3AEBD600421C73 /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FBB4CA51F3AEBD600421C73 /* invoice.html */; };
+		7FBB4CA91F3AEBD600421C73 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FBB4CA61F3AEBD600421C73 /* last_item.html */; };
+		7FBB4CAA1F3AEBD600421C73 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FBB4CA71F3AEBD600421C73 /* single_item.html */; };
+		7FBB4CAE1F3AF77E00421C73 /* PrintPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB4CAC1F3AF77E00421C73 /* PrintPdfViewController.swift */; };
+		7FBB4CAF1F3AF77E00421C73 /* PrintPdfViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBB4CAD1F3AF77E00421C73 /* PrintPdfViewController.xib */; };
+		7FBB4CB11F3B01CC00421C73 /* practice.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FBB4CB01F3B01CC00421C73 /* practice.html */; };
 		7FF8A8C61F3340860040116D /* pencil_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A8C51F3340860040116D /* pencil_icon.png */; };
 		7FF8A8C81F33416B0040116D /* edit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A8C71F33416B0040116D /* edit_icon.png */; };
 		7FF8A8CC1F3355850040116D /* ResultScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A8CA1F3355850040116D /* ResultScreenViewController.swift */; };
@@ -56,6 +62,12 @@
 		7F3379E91F39F06D00334923 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7FA0C6531F3450C200BC769A /* SlabEditorViewController_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlabEditorViewController_5.xib; path = ViewControllers/SlabEditorViewController/SlabEditorViewController_5.xib; sourceTree = "<group>"; };
 		7FA0C6561F346E6500BC769A /* ValidationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationViewController.swift; path = ValidationClass/ValidationViewController.swift; sourceTree = "<group>"; };
+		7FBB4CA51F3AEBD600421C73 /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = invoice.html; path = ThirdParty/HtmlTemplates/invoice.html; sourceTree = "<group>"; };
+		7FBB4CA61F3AEBD600421C73 /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = last_item.html; path = ThirdParty/HtmlTemplates/last_item.html; sourceTree = "<group>"; };
+		7FBB4CA71F3AEBD600421C73 /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = single_item.html; path = ThirdParty/HtmlTemplates/single_item.html; sourceTree = "<group>"; };
+		7FBB4CAC1F3AF77E00421C73 /* PrintPdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrintPdfViewController.swift; path = ViewControllers/PrintPdfViewController/PrintPdfViewController.swift; sourceTree = "<group>"; };
+		7FBB4CAD1F3AF77E00421C73 /* PrintPdfViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrintPdfViewController.xib; path = ViewControllers/PrintPdfViewController/PrintPdfViewController.xib; sourceTree = "<group>"; };
+		7FBB4CB01F3B01CC00421C73 /* practice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = practice.html; path = ThirdParty/HtmlTemplates/practice.html; sourceTree = "<group>"; };
 		7FF8A8C51F3340860040116D /* pencil_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pencil_icon.png; path = images/pencil_icon.png; sourceTree = "<group>"; };
 		7FF8A8C71F33416B0040116D /* edit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit_icon.png; path = images/edit_icon.png; sourceTree = "<group>"; };
 		7FF8A8CA1F3355850040116D /* ResultScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultScreenViewController.swift; path = ViewControllers/ResultScreenViewController/ResultScreenViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +125,7 @@
 		7F3379E51F39ECE600334923 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				7FBB4CA41F3AEBC500421C73 /* HtmlTemplates */,
 				7F3379E61F39ED0000334923 /* CustomPrintPageRenderer.swift */,
 			);
 			name = ThirdParty;
@@ -124,6 +137,26 @@
 				7FA0C6561F346E6500BC769A /* ValidationViewController.swift */,
 			);
 			name = ValidationClass;
+			sourceTree = "<group>";
+		};
+		7FBB4CA41F3AEBC500421C73 /* HtmlTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				7FBB4CB01F3B01CC00421C73 /* practice.html */,
+				7FBB4CA51F3AEBD600421C73 /* invoice.html */,
+				7FBB4CA61F3AEBD600421C73 /* last_item.html */,
+				7FBB4CA71F3AEBD600421C73 /* single_item.html */,
+			);
+			name = HtmlTemplates;
+			sourceTree = "<group>";
+		};
+		7FBB4CAB1F3AF75C00421C73 /* PrintPdfViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FBB4CAC1F3AF77E00421C73 /* PrintPdfViewController.swift */,
+				7FBB4CAD1F3AF77E00421C73 /* PrintPdfViewController.xib */,
+			);
+			name = PrintPdfViewController;
 			sourceTree = "<group>";
 		};
 		7FF8A8C41F33406D0040116D /* images */ = {
@@ -204,6 +237,7 @@
 		7FFC28591F32FDF400352080 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7FBB4CAB1F3AF75C00421C73 /* PrintPdfViewController */,
 				7FF8A8C91F3355230040116D /* ResultScreenViewController */,
 				7FFC285F1F3314AA00352080 /* SlabEditorController */,
 				7FFC285E1F33004F00352080 /* HomeViewController */,
@@ -364,8 +398,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FF8A8C81F33416B0040116D /* edit_icon.png in Resources */,
+				7FBB4CAA1F3AEBD600421C73 /* single_item.html in Resources */,
+				7FBB4CA91F3AEBD600421C73 /* last_item.html in Resources */,
 				7FF8A8CD1F3355850040116D /* ResultScreenViewController.xib in Resources */,
 				7FFC28361F32FC2C00352080 /* LaunchScreen.storyboard in Resources */,
+				7FBB4CB11F3B01CC00421C73 /* practice.html in Resources */,
+				7FBB4CAF1F3AF77E00421C73 /* PrintPdfViewController.xib in Resources */,
+				7FBB4CA81F3AEBD600421C73 /* invoice.html in Resources */,
 				7FA0C6541F3450C200BC769A /* SlabEditorViewController_5.xib in Resources */,
 				7FF8A8C61F3340860040116D /* pencil_icon.png in Resources */,
 				7FFC28631F33153600352080 /* SlabEditorViewController.xib in Resources */,
@@ -450,6 +489,7 @@
 				7F3379E71F39ED0000334923 /* CustomPrintPageRenderer.swift in Sources */,
 				7FFC28621F33153600352080 /* SlabEditorViewController.swift in Sources */,
 				7FFC28311F32FC2C00352080 /* TaxCalculator.xcdatamodeld in Sources */,
+				7FBB4CAE1F3AF77E00421C73 /* PrintPdfViewController.swift in Sources */,
 				7FFC285C1F32FE1900352080 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
