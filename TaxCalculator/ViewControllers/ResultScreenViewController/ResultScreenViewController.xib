@@ -64,7 +64,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agq-yV-nbe">
-                    <rect key="frame" x="0.0" y="73" width="375" height="594"/>
+                    <rect key="frame" x="0.0" y="73" width="375" height="544"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Taxable Income" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCt-oV-HlD">
                             <rect key="frame" x="21" y="8" width="197" height="52"/>
@@ -357,19 +357,6 @@
                                 <constraint firstAttribute="height" constant="2" id="Nuj-GC-FTv"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0F-wv-jia">
-                            <rect key="frame" x="0.0" y="544" width="375" height="50"/>
-                            <color key="backgroundColor" red="0.30588235289999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Vld-qN-bbH"/>
-                            </constraints>
-                            <state key="normal" title="Generate PDF">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="goToPdfScreen:" destination="-1" eventType="touchUpInside" id="jq7-3e-QIS"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="QJG-ax-9xA" firstAttribute="leading" secondItem="hIe-Gx-uhW" secondAttribute="trailing" constant="37" id="0Df-K8-taV"/>
@@ -433,16 +420,14 @@
                         <constraint firstItem="3HF-2A-M2A" firstAttribute="top" secondItem="zar-qo-vOP" secondAttribute="bottom" constant="12" id="Ytj-yV-pG0"/>
                         <constraint firstItem="B5M-hU-UWJ" firstAttribute="leading" secondItem="hIe-Gx-uhW" secondAttribute="trailing" constant="2" id="Z8J-Zg-JN4"/>
                         <constraint firstItem="hE4-dG-dDx" firstAttribute="leading" secondItem="lrE-xv-YLT" secondAttribute="trailing" constant="19" id="ZGg-b9-qI5"/>
-                        <constraint firstAttribute="trailing" secondItem="h0F-wv-jia" secondAttribute="trailing" id="aYR-Jd-McI"/>
                         <constraint firstItem="hE4-dG-dDx" firstAttribute="leading" secondItem="2DP-X4-Bhh" secondAttribute="trailing" constant="21" id="bBl-MH-8lb"/>
                         <constraint firstItem="MIv-z9-0ag" firstAttribute="leading" secondItem="hE4-dG-dDx" secondAttribute="trailing" constant="8" id="bVS-aD-Udc"/>
                         <constraint firstItem="SnY-0e-HuQ" firstAttribute="leading" secondItem="fGL-lh-rIL" secondAttribute="trailing" constant="2" id="c0o-UT-HJJ"/>
                         <constraint firstItem="SnY-0e-HuQ" firstAttribute="leading" secondItem="BDD-YM-JMq" secondAttribute="trailing" constant="2" id="cLT-AJ-pGY"/>
-                        <constraint firstAttribute="bottom" secondItem="hIe-Gx-uhW" secondAttribute="bottom" constant="92" id="cLV-6M-Ic5"/>
+                        <constraint firstAttribute="bottom" secondItem="hIe-Gx-uhW" secondAttribute="bottom" constant="42" id="cLV-6M-Ic5"/>
                         <constraint firstItem="BDD-YM-JMq" firstAttribute="leading" secondItem="hE4-dG-dDx" secondAttribute="trailing" constant="8" id="crR-2N-Wxn"/>
                         <constraint firstItem="cLj-0H-9X7" firstAttribute="leading" secondItem="hE4-dG-dDx" secondAttribute="trailing" constant="8" id="d7p-1y-uyk"/>
                         <constraint firstItem="qDF-V9-Kmx" firstAttribute="leading" secondItem="hrY-00-P9p" secondAttribute="leading" id="dSf-lG-8uC"/>
-                        <constraint firstAttribute="bottom" secondItem="h0F-wv-jia" secondAttribute="bottom" id="dZo-1b-QfK"/>
                         <constraint firstItem="oX5-Q2-xtz" firstAttribute="leading" secondItem="hE4-dG-dDx" secondAttribute="trailing" constant="8" id="eOo-Xe-mkj"/>
                         <constraint firstItem="Dtb-5R-rHh" firstAttribute="leading" secondItem="hE4-dG-dDx" secondAttribute="trailing" constant="8" id="enf-0m-tGd"/>
                         <constraint firstItem="2DP-X4-Bhh" firstAttribute="top" secondItem="iWT-Dv-bhZ" secondAttribute="bottom" constant="8" id="etZ-X3-8EO"/>
@@ -472,18 +457,33 @@
                         <constraint firstItem="kUX-dX-W2t" firstAttribute="leading" secondItem="hIe-Gx-uhW" secondAttribute="trailing" constant="2" id="vHY-A3-xid"/>
                         <constraint firstItem="hE4-dG-dDx" firstAttribute="top" secondItem="agq-yV-nbe" secondAttribute="top" constant="8" id="vVU-pB-BUn"/>
                         <constraint firstItem="zar-qo-vOP" firstAttribute="top" secondItem="QJG-ax-9xA" secondAttribute="bottom" constant="1" id="zPI-pk-PGQ"/>
-                        <constraint firstItem="h0F-wv-jia" firstAttribute="leading" secondItem="agq-yV-nbe" secondAttribute="leading" id="zZ8-5n-GXP"/>
                         <constraint firstItem="iWT-Dv-bhZ" firstAttribute="leading" secondItem="hts-L0-7NM" secondAttribute="leading" id="zmK-3O-IhR"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0F-wv-jia">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.30588235289999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="g0n-K3-frF"/>
+                    </constraints>
+                    <state key="normal" title="Generate PDF">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="goToPdfScreen:" destination="-1" eventType="touchUpInside" id="jq7-3e-QIS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="J34-zh-8vt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Ov-Bc-n2T"/>
                 <constraint firstAttribute="trailing" secondItem="agq-yV-nbe" secondAttribute="trailing" id="DZO-fb-Ggo"/>
+                <constraint firstAttribute="trailing" secondItem="h0F-wv-jia" secondAttribute="trailing" id="LPw-lO-cd9"/>
+                <constraint firstAttribute="bottom" secondItem="h0F-wv-jia" secondAttribute="bottom" id="Rvb-HU-Duv"/>
                 <constraint firstItem="J34-zh-8vt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Slq-Jc-ya8"/>
                 <constraint firstAttribute="trailing" secondItem="J34-zh-8vt" secondAttribute="trailing" id="XcS-lf-MRA"/>
-                <constraint firstAttribute="bottom" secondItem="agq-yV-nbe" secondAttribute="bottom" id="gQu-J5-XE4"/>
+                <constraint firstItem="h0F-wv-jia" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Y9V-jF-Srg"/>
+                <constraint firstAttribute="bottom" secondItem="agq-yV-nbe" secondAttribute="bottom" constant="50" id="gQu-J5-XE4"/>
                 <constraint firstItem="agq-yV-nbe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jXA-Fj-dQx"/>
                 <constraint firstItem="agq-yV-nbe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="73" id="nit-cm-0ll"/>
             </constraints>
