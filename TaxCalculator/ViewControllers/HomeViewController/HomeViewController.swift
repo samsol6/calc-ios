@@ -51,7 +51,16 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
     
     lazy var adBannerView: GADBannerView = {
         let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView.adUnitID = "ca-app-pub-8501671653071605/1974659335"
+        
+        //This is I replaced the below one id with this one.
+//        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+        
+        //now I am replacing the adUnitID with the iOS adUnitID from Talha bhai...
+        
+//        adBannerView.adUnitID = "ca-app-pub-1094766830624422/9362812685"
+        
+        //correct
+//        adBannerView.adUnitID = "ca-app-pub-8501671653071605/1974659335"
         adBannerView.delegate = self
         adBannerView.rootViewController = self
         
@@ -141,7 +150,12 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
 //        adBannerView.adUnitID = "a-app-pub-5758974607162669/4357501237"
         //This is sample ad unit id
-        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+//        adBannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+        
+        //now I am replacing the adUnitID with the iOS adUnitID from Talha bhai...
+        
+        adBannerView.adUnitID = "ca-app-pub-1094766830624422/9362812685"
+
         
         adBannerView.delegate = self
         adBannerView.rootViewController = self
