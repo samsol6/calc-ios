@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBannerViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBannerViewDelegate, GADInterstitialDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var fromYear: UIPickerView!
     @IBOutlet weak var toYear: UIPickerView!
@@ -41,12 +41,16 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
     @IBOutlet weak var taxDeductedIncomeLbl: UILabel!
     
     
-    
-    
-    
-    
     var activeField: UITextField?
     
+    
+    
+    //For Ads *************************************************
+    
+    //For Interstitial...................
+    var interstitial: GADInterstitial!
+    
+    //For Banner ad .....................
     var bannerView: GADBannerView!
     
     lazy var adBannerView: GADBannerView = {
@@ -68,7 +72,7 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
     }()
     
     
-    //Mark : AdBanner Delegate functions...!
+    //MARK: - AdBanner Delegate functions...!
     func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
         print("Banner loaded successfully")
 //        bannerView.frame = self.myBannerView.frame
@@ -111,13 +115,53 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
     
     //End mark...!!!
     
+    
+    //MARK: - Interstitial delegate ads
+    /// Tells the delegate an ad request succeeded.
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("interstitialDidReceiveAd")
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that an interstitial will be presented.
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        print("interstitialWillPresentScreen")
+    }
+    
+    /// Tells the delegate the interstitial is to be animated off the screen.
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialWillDismissScreen")
+    }
+    
+    /// Tells the delegate the interstitial had been animated off the screen.
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app
+    /// (such as the App Store), backgrounding the current app.
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        print("interstitialWillLeaveApplication")
+    }
+    
+    
+    
     var fromYearArray = NSMutableArray()
     var toYearArray   = NSMutableArray()
     
     var fromYearSelected = String()
     var toYearSelected   = String()
     
-    //Mark : View LifeCycle.... ******
+    //MARK: - View LifeCycle.... ******
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -142,6 +186,22 @@ class HomeViewController: ValidationViewController, UITextFieldDelegate,GADBanne
         self.toYearSelected = "2017"
         //end
         
+        
+        //For Ads **********************************************************************
+        
+        //For Interstitial ad..................
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        let request2 = GADRequest()
+        interstitial.load(request2)
+//        if interstitial.isReady {
+//            interstitial.present(fromRootViewController: self)
+//        } else {
+//            print("Ad wasn't ready")
+//        }
+        
+        
+        //For Banner ad........................
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID,                       // All simulators
             "03722c52d89c963a4f8add797ee1aa812bf5ef6d" ];
